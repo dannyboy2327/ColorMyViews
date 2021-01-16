@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners() {
         val clickableViews: List<View> = listOf(binding.boxOneText, binding.boxTwoText, binding.boxThreeText,
-            binding.boxFourText, binding.boxFiveText, binding.constraintLayout)
+            binding.boxFourText, binding.boxFiveText, binding.constraintLayout, binding.redButton, binding.yellowButton, binding.greenButton)
 
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it)}
@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_green_light))
             R.id.box_four_text ->  view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_green_dark))
             R.id.box_five_text -> view.setBackgroundColor(ContextCompat.getColor(this, android.R.color.holo_green_light))
+            R.id.red_button -> binding.boxThreeText.setBackgroundColor(ContextCompat.getColor(this, R.color.my_red))
+            R.id.yellow_button -> binding.boxFourText.setBackgroundColor(ContextCompat.getColor(this, R.color.my_yellow))
+            R.id.green_button -> binding.boxFiveText.setBackgroundColor(ContextCompat.getColor(this, R.color.my_green))
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
